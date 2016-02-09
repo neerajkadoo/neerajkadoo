@@ -1,0 +1,642 @@
+<suite name="Test Cases">
+	<test name="Test" preserve-order="true">
+		<groups>
+			<run>
+				<exclude name="positive" />
+				<exclude name="negative" />
+				<include name="smoke" />
+			</run>
+		</groups>
+
+	   <listeners>
+	        <listener class-name="com.mvn.automation.ExtentReporterNG" />
+	    </listeners>
+
+		<test name="Chrome Test" preserve-order="true">
+			<parameter name="browserType" value="chrome" />
+			<parameter name="env" value="stage" />
+			<classes>
+				<class name="com.mvn.automation.SignUpTest">
+					<methods>
+						<include name="signUpNewUser" />
+						<include name="signUpexistingUser" />
+						<include name="signUpInvalidEmail" />
+						<include name="signUpMissingName" />
+						<include name="signUpMissingPassword" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SignInTest">
+					<methods>
+						<include name="signInUser" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.CreateSpaceTest">
+					<methods>
+						<include name="createNewSpace" />
+						<include name="addMoreFilestoSpace" />
+						<include name="deleteSpace" />
+						<include name="deleteSpaceMenu" />
+						<include name="backgroundImageSpace" />
+						<include name="RemoveBackgroundImageSpace" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.UpgradeAccountTest">
+					<methods>
+						<include name="upgradeAccount" />
+						<include name="keepProAccount" />
+						<include name="downgradeAccount" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.HomePageLinksTest">
+					<methods>
+						<include name="findHomePageLinks" />
+						<include name="findHomePageButtons" />
+					</methods>
+				</class> 
+				<class name="com.mvn.automation.OAuth_signInTest">
+					<methods>
+						<include name="oAuth_noPwdSignIn" />
+						<include name="oAuth_noEmailSignIn" />
+						<include name="oAuth_incorrectPwdSignIn" />
+						<include name="oAuth_incorrectEmailSignIn" />
+						<include name="oAuth_nonExistingEmailSignIn" />
+						<include name="oAuth_validSignIn" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.ShareASpaceTest">
+					<methods>
+						<include name="shareAspace" />
+						<include name="shareAWithApprvDwnldCmmnt" />
+						<include name="shareWithCommentOnly" />
+						<include name="shareAspaceonSlack" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SignOutTest">
+					<methods>
+						<include name="signOutUser" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminSignInTest">
+					<methods>
+ 						<include name="AdminSignInUser" /> 
+						<include name="AdminLinkSignIn" />
+						<include name="AdminSignEmpty" />
+						<include name="AdminSignInNoPwd" />
+						<include name="AdminSignInNoEmail" />
+						<include name="AdminSignInInvalidEmail" />
+						<include name="AdminSignInInvalidPwd" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminResetPwdTest">
+					<methods>
+						<include name="AdminResetPwd" />
+						<include name="AdminResetPwdResend" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminMemberTest">
+					<methods>
+ 						<include name="AdminMemberAddSearchDelete" /> 
+ 						<include name="AdminMemberActivity" /> 
+ 						<include name="AdminMemberSearchNotFound" /> 
+					</methods>
+				</class>
+				<class name="com.mvn.automation.PasswordUpdateTest">
+					<methods>
+						<include name="passwordUpdateSpacesUser" />
+						<include name="resetUserPassword" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.MenuOptionsTest">
+					<methods>
+						<include name="downloadFiles" />
+						<include name="addAccessCode" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SpaceFileDetails">
+					<methods>
+						<include name="approveFile" />
+						<include name="addFileVersion" />
+						<include name="unApproveFile" />
+						<include name="mentionUser" />
+						<include name="followUp" />
+						<include name="addComment" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.DashboardTest">
+					<methods>
+						<include name="dashboardCreation" />
+						<include name="dashboardHealthCheck" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.CreateSpaceViaOauthTest">
+					<methods>
+ 						<include name="createSpaceDropboxOauth" />
+ 						<include name="disconnectDropboxOauth" />
+						<include name="createSpaceMicrosoftOauth" />		
+ 						<include name="disconnectGoogleOauth" />
+ 						<include name="disconnectMicrosoftOauth" />
+ 						<include name="createSpaceGoogleOauth" />										
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SendTest">
+					<methods>
+						<include name="sendASingleFile" />
+						<include name="sendMultipleFiles" />
+						<include name="removeAFile" />
+						<include name="sendToAnInvalidEmail" />
+						<include name="sendToBlankEmail" />
+						<include name="sendWithAccessCode" />
+						<include name="sendWithExpiration" />
+						<include name="sendWithVerifyRecipientIdentity" />
+						<include name="sendWithDownloadReceipt" />
+						<include name="sendWithAllOptions" />
+						<include name="sendFromAllStorageProviders" />
+						<include name="liteSingleFileHTOauth" />
+						<include name="liteAccessCodePaywall" />
+						<include name="liteExpirationPaywall" />
+						<include name="liteFileSizePaywall" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.ContentProviderTest">
+					<methods>
+						<include name="connectToDropbox" />
+						<include name="connectToGoogleDrive" />
+						<include name="connectToOneDrive" />
+						<include name="disconnectDropbox" />
+						<include name="disconnectGoogle" />
+						<include name="disconnectOneDrive" />
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+
+		<test name="Firefox Test" preserve-order="true">
+			<parameter name="browserType" value="Firefox" />
+			<parameter name="env" value="stage" />
+			<classes>
+				<class name="com.mvn.automation.SignUpTest">
+					<methods>
+						<include name="signUpNewUser" />
+						<include name="signUpexistingUser" />
+						<include name="signUpInvalidEmail" />
+						<include name="signUpMissingName" />
+						<include name="signUpMissingPassword" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SignInTest">
+					<methods>
+						<include name="signInUser" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.CreateSpaceTest">
+					<methods>
+						<include name="createNewSpace" />
+						<include name="addMoreFilestoSpace" />
+						<include name="deleteSpace" />
+						<include name="deleteSpaceMenu" />
+						<include name="backgroundImageSpace" />
+						<include name="RemoveBackgroundImageSpace" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.UpgradeAccountTest">
+					<methods>
+						<include name="upgradeAccount" />
+						<include name="keepProAccount" />
+						<include name="downgradeAccount" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.HomePageLinksTest">
+					<methods>
+						<include name="findHomePageLinks" />
+						<include name="findHomePageButtons" />
+					</methods>
+				</class> 
+				<class name="com.mvn.automation.OAuth_signInTest">
+					<methods>
+						<include name="oAuth_noPwdSignIn" />
+						<include name="oAuth_noEmailSignIn" />
+						<include name="oAuth_incorrectPwdSignIn" />
+						<include name="oAuth_incorrectEmailSignIn" />
+						<include name="oAuth_nonExistingEmailSignIn" />
+						<include name="oAuth_validSignIn" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.ShareASpaceTest">
+					<methods>
+						<include name="shareAspace" />
+						<include name="shareAWithApprvDwnldCmmnt" />
+						<include name="shareWithCommentOnly" />
+						<include name="shareAspaceonSlack" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SignOutTest">
+					<methods>
+						<include name="signOutUser" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminSignInTest">
+					<methods>
+ 						<include name="AdminSignInUser" /> 
+						<include name="AdminLinkSignIn" />
+						<include name="AdminSignEmpty" />
+						<include name="AdminSignInNoPwd" />
+						<include name="AdminSignInNoEmail" />
+						<include name="AdminSignInInvalidEmail" />
+						<include name="AdminSignInInvalidPwd" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminResetPwdTest">
+					<methods>
+						<include name="AdminResetPwd" />
+						<include name="AdminResetPwdResend" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminMemberTest">
+					<methods>
+ 						<include name="AdminMemberAddSearchDelete" /> 
+					</methods>
+				</class>
+				<class name="com.mvn.automation.PasswordUpdateTest">
+					<methods>
+						<include name="passwordUpdateSpacesUser" />
+						<include name="resetUserPassword" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.MenuOptionsTest">
+					<methods>
+						<include name="downloadFiles" />
+						<include name="addAccessCode" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SpaceFileDetails">
+					<methods>
+						<include name="approveFile" />
+						<include name="addFileVersion" />
+						<include name="unApproveFile" />
+						<include name="mentionUser" />
+						<include name="followUp" />
+						<include name="addComment" />
+						<include name="deleteFile" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.DashboardTest">
+					<methods>
+						<include name="dashboardCreation" />
+						<include name="dashboardHealthCheck" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.CreateSpaceViaOauthTest">
+					<methods>
+ 						<include name="createSpaceDropboxOauth" />
+ 						<include name="disconnectDropboxOauth" />
+						<include name="createSpaceMicrosoftOauth" />		
+ 						<include name="disconnectGoogleOauth" />
+ 						<include name="disconnectMicrosoftOauth" />
+ 						<include name="createSpaceGoogleOauth" />										
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SendTest">
+					<methods>
+						<include name="sendASingleFile" />
+						<include name="sendMultipleFiles" />
+						<include name="removeAFile" />
+						<include name="sendToAnInvalidEmail" />
+						<include name="sendToBlankEmail" />
+						<include name="sendWithAccessCode" />
+						<include name="sendWithExpiration" />
+						<include name="sendWithVerifyRecipientIdentity" />
+						<include name="sendWithDownloadReceipt" />
+						<include name="sendWithAllOptions" />
+						<include name="sendFromAllStorageProviders" />
+						<include name="liteSingleFileHTOauth" />
+						<include name="liteAccessCodePaywall" />
+						<include name="liteExpirationPaywall" />
+						<include name="liteFileSizePaywall" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.ContentProviderTest">
+					<methods>
+						<include name="connectToDropbox" />
+						<include name="connectToGoogleDrive" />
+						<include name="connectToOneDrive" />
+						<include name="disconnectDropbox" />
+						<include name="disconnectGoogle" />
+						<include name="disconnectOneDrive" />
+					</methods>
+				</class>
+			</classes>
+		</test>
+		
+		<test name="Chrome Test" preserve-order="true">
+			<parameter name="browserType" value="chrome" />
+			<parameter name="env" value="prod" />
+			<classes>
+				<class name="com.mvn.automation.SignUpTest">
+					<methods>
+						<include name="signUpNewUser" />
+						<include name="signUpexistingUser" />
+						<include name="signUpInvalidEmail" />
+						<include name="signUpMissingName" />
+						<include name="signUpMissingPassword" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SignInTest">
+					<methods>
+						<include name="signInUser" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.CreateSpaceTest">
+					<methods>
+						<include name="createNewSpace" />
+						<include name="addMoreFilestoSpace" />
+						<include name="deleteSpace" />
+						<include name="deleteSpaceMenu" />
+						<include name="backgroundImageSpace" />
+						<include name="RemoveBackgroundImageSpace" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.UpgradeAccountTest">
+					<methods>
+						<include name="upgradeAccount" />
+						<include name="keepProAccount" />
+						<include name="downgradeAccount" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.HomePageLinksTest">
+					<methods>
+						<include name="findHomePageLinks" />
+						<include name="findHomePageButtons" />
+					</methods>
+				</class> 
+				<class name="com.mvn.automation.OAuth_signInTest">
+					<methods>
+						<include name="oAuth_noPwdSignIn" />
+						<include name="oAuth_noEmailSignIn" />
+						<include name="oAuth_incorrectPwdSignIn" />
+						<include name="oAuth_incorrectEmailSignIn" />
+						<include name="oAuth_nonExistingEmailSignIn" />
+						<include name="oAuth_validSignIn" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.ShareASpaceTest">
+					<methods>
+						<include name="shareAspace" />
+						<include name="shareAWithApprvDwnldCmmnt" />
+						<include name="shareWithCommentOnly" />
+						<include name="shareAspaceonSlack" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SignOutTest">
+					<methods>
+						<include name="signOutUser" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminSignInTest">
+					<methods>
+ 						<include name="AdminSignInUser" /> 
+						<include name="AdminLinkSignIn" />
+						<include name="AdminSignEmpty" />
+						<include name="AdminSignInNoPwd" />
+						<include name="AdminSignInNoEmail" />
+						<include name="AdminSignInInvalidEmail" />
+						<include name="AdminSignInInvalidPwd" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminResetPwdTest">
+					<methods>
+						<include name="AdminResetPwd" />
+						<include name="AdminResetPwdResend" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminMemberTest">
+					<methods>
+ 						<include name="AdminMemberAddSearchDelete" /> 
+					</methods>
+				</class>
+				<class name="com.mvn.automation.PasswordUpdateTest">
+					<methods>
+						<include name="passwordUpdateSpacesUser" />
+						<include name="resetUserPassword" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.MenuOptionsTest">
+					<methods>
+						<include name="downloadFiles" />
+						<include name="addAccessCode" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SpaceFileDetails">
+					<methods>
+						<include name="approveFile" />
+						<include name="addFileVersion" />
+						<include name="unApproveFile" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.DashboardTest">
+					<methods>
+						<include name="dashboardCreation" />
+						<include name="dashboardHealthCheck" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.CreateSpaceViaOauthTest">
+					<methods>
+ 						<include name="createSpaceDropboxOauth" />
+ 						<include name="disconnectDropboxOauth" />
+						<include name="createSpaceMicrosoftOauth" />		
+ 						<include name="disconnectGoogleOauth" />
+ 						<include name="disconnectMicrosoftOauth" />
+ 						<include name="createSpaceGoogleOauth" />										
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SendTest">
+					<methods>
+						<include name="sendASingleFile" />
+						<include name="sendMultipleFiles" />
+						<include name="removeAFile" />
+						<include name="sendToAnInvalidEmail" />
+						<include name="sendToBlankEmail" />
+						<include name="sendWithAccessCode" />
+						<include name="sendWithExpiration" />
+						<include name="sendWithVerifyRecipientIdentity" />
+						<include name="sendWithDownloadReceipt" />
+						<include name="sendWithAllOptions" />
+						<include name="sendFromAllStorageProviders" />
+						<include name="liteSingleFileHTOauth" />
+						<include name="liteAccessCodePaywall" />
+						<include name="liteExpirationPaywall" />
+						<include name="liteFileSizePaywall" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.ContentProviderTest">
+					<methods>
+						<include name="connectToDropbox" />
+						<include name="connectToGoogleDrive" />
+						<include name="connectToOneDrive" />
+						<include name="disconnectDropbox" />
+						<include name="disconnectGoogle" />
+						<include name="disconnectOneDrive" />
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+
+		<test name="Firefox Test" preserve-order="true">
+			<parameter name="browserType" value="Firefox" />
+			<parameter name="env" value="prod" />
+			<classes>
+				<class name="com.mvn.automation.SignUpTest">
+					<methods>
+						<include name="signUpNewUser" />
+						<include name="signUpexistingUser" />
+						<include name="signUpInvalidEmail" />
+						<include name="signUpMissingName" />
+						<include name="signUpMissingPassword" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SignInTest">
+					<methods>
+						<include name="signInUser" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.CreateSpaceTest">
+					<methods>
+						<include name="createNewSpace" />
+						<include name="addMoreFilestoSpace" />
+						<include name="deleteSpace" />
+						<include name="deleteSpaceMenu" />
+						<include name="backgroundImageSpace" />
+						<include name="RemoveBackgroundImageSpace" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.UpgradeAccountTest">
+					<methods>
+						<include name="upgradeAccount" />
+						<include name="keepProAccount" />
+						<include name="downgradeAccount" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.HomePageLinksTest">
+					<methods>
+						<include name="findHomePageLinks" />
+						<include name="findHomePageButtons" />
+					</methods>
+				</class> 
+				<class name="com.mvn.automation.OAuth_signInTest">
+					<methods>
+						<include name="oAuth_noPwdSignIn" />
+						<include name="oAuth_noEmailSignIn" />
+						<include name="oAuth_incorrectPwdSignIn" />
+						<include name="oAuth_incorrectEmailSignIn" />
+						<include name="oAuth_nonExistingEmailSignIn" />
+						<include name="oAuth_validSignIn" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.ShareASpaceTest">
+					<methods>
+						<include name="shareAspace" />
+						<include name="shareAWithApprvDwnldCmmnt" />
+						<include name="shareWithCommentOnly" />
+						<include name="shareAspaceonSlack" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SignOutTest">
+					<methods>
+						<include name="signOutUser" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminSignInTest">
+					<methods>
+ 						<include name="AdminSignInUser" /> 
+						<include name="AdminLinkSignIn" />
+						<include name="AdminSignEmpty" />
+						<include name="AdminSignInNoPwd" />
+						<include name="AdminSignInNoEmail" />
+						<include name="AdminSignInInvalidEmail" />
+						<include name="AdminSignInInvalidPwd" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminResetPwdTest">
+					<methods>
+						<include name="AdminResetPwd" />
+						<include name="AdminResetPwdResend" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.AdminMemberTest">
+					<methods>
+ 						<include name="AdminMemberAddSearchDelete" /> 
+					</methods>
+				</class>
+				<class name="com.mvn.automation.PasswordUpdateTest">
+					<methods>
+						<include name="passwordUpdateSpacesUser" />
+						<include name="resetUserPassword" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.MenuOptionsTest">
+					<methods>
+						<include name="downloadFiles" />
+						<include name="addAccessCode" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SpaceFileDetails">
+					<methods>
+						<include name="approveFile" />
+						<include name="addFileVersion" />
+						<include name="unApproveFile" />
+						<include name="mentionUser" />
+						<include name="followUp" />
+						<include name="addComment" />
+						<include name="deleteFile" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.DashboardTest">
+					<methods>
+						<include name="dashboardCreation" />
+						<include name="dashboardHealthCheck" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.CreateSpaceViaOauthTest">
+					<methods>
+ 						<include name="createSpaceDropboxOauth" />
+ 						<include name="disconnectDropboxOauth" />
+						<include name="createSpaceMicrosoftOauth" />		
+ 						<include name="disconnectGoogleOauth" />
+ 						<include name="disconnectMicrosoftOauth" />
+ 						<include name="createSpaceGoogleOauth" />										
+					</methods>
+				</class>
+				<class name="com.mvn.automation.SendTest">
+					<methods>
+						<include name="sendASingleFile" />
+						<include name="sendMultipleFiles" />
+						<include name="removeAFile" />
+						<include name="sendToAnInvalidEmail" />
+						<include name="sendToBlankEmail" />
+						<include name="sendWithAccessCode" />
+						<include name="sendWithExpiration" />
+						<include name="sendWithVerifyRecipientIdentity" />
+						<include name="sendWithDownloadReceipt" />
+						<include name="sendWithAllOptions" />
+						<include name="sendFromAllStorageProviders" />
+						<include name="liteSingleFileHTOauth" />
+						<include name="liteAccessCodePaywall" />
+						<include name="liteExpirationPaywall" />
+						<include name="liteFileSizePaywall" />
+					</methods>
+				</class>
+				<class name="com.mvn.automation.ContentProviderTest">
+					<methods>
+						<include name="connectToDropbox" />
+						<include name="connectToGoogleDrive" />
+						<include name="connectToOneDrive" />
+						<include name="disconnectDropbox" />
+						<include name="disconnectGoogle" />
+						<include name="disconnectOneDrive" />
+					</methods>
+				</class>
+			</classes>
+		</test>
+	</test>
+</suite>

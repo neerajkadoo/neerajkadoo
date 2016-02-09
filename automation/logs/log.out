@@ -1,0 +1,32 @@
+2016-02-04/13:59:23:121 -- INFO       mentionUser - Login is Successful
+2016-02-04/13:59:33:600 -- INFO       mentionUser - Clicked on Create Space button
+2016-02-04/13:59:34:887 -- INFO       mentionUser - Entered Space name
+2016-02-04/13:59:34:979 -- INFO       mentionUser - Uploaded new files to Spaces
+2016-02-04/13:59:37:981 -- INFO       mentionUser - Clicking on the first image upladed to space
+2016-02-04/13:59:38:294 -- INFO       mentionUser - Click on image to open the comment field
+2016-02-04/13:59:39:139 -- INFO       mentionUser - Enter @Mention in the comment field
+2016-02-04/13:59:41:436 -- INFO       mentionUser - Click on Post comment button
+2016-02-04/13:59:49:446 -- INFO       CreateSpaceTest - Running create new space testcase
+2016-02-04/13:59:49:446 -- INFO       followUp - Running Log1
+2016-02-04/13:59:49:452 -- INFO       followUp - Getting login credentials from excel File
+2016-02-04/13:59:49:976 -- INFO       followUp - Using prd_selpro@dispostable.com to login to Spaces
+2016-02-04/13:59:50:923 -- INFO       followUp - Login is Successful
+2016-02-04/14:00:04:692 -- INFO       FullScreenCapture - Png Path:/Users/neeraj.kadoo/automation/automation/automation//Screenshots//Failures//followUp-20160204_020004PM.png
+2016-02-04/14:00:09:339 -- INFO       CreateSpaceTest - Running create new space testcase
+2016-02-04/14:00:09:339 -- INFO       addComment - Running Log1
+2016-02-04/14:00:09:345 -- INFO       addComment - Getting login credentials from excel File
+2016-02-04/14:00:09:780 -- INFO       addComment - Using prd_selpro@dispostable.com to login to Spaces
+2016-02-04/14:00:10:109 -- INFO       addComment - Login is Successful
+2016-02-04/14:00:24:184 -- INFO       FullScreenCapture - Png Path:/Users/neeraj.kadoo/automation/automation/automation//Screenshots//Failures//addComment-20160204_020024PM.png
+2016-02-04/14:00:33:127 -- INFO       CreateSpaceTest - Running create new space testcase
+2016-02-04/14:00:33:127 -- INFO       deleteFile - Running Log1
+2016-02-04/14:00:33:133 -- INFO       deleteFile - Getting login credentials from excel File
+2016-02-04/14:00:33:468 -- INFO       deleteFile - Using prd_selpro@dispostable.com to login to Spaces
+2016-02-04/14:00:34:442 -- INFO       deleteFile - Login is Successful
+2016-02-04/14:00:48:475 -- INFO       FullScreenCapture - Png Path:/Users/neeraj.kadoo/automation/automation/automation//Screenshots//Failures//deleteFile-20160204_020048PM.png
+2016-02-04/14:00:55:187 -- INFO       DashboardTest - dashboardCreation testcase
+2016-02-04/14:00:55:553 -- INFO       DashboardTest - Using prd_selpro@dispostable.com to login to Spaces
+2016-02-04/14:01:10:166 -- INFO       FullScreenCapture - Png Path:/Users/neeraj.kadoo/automation/automation/automation//Screenshots//Failures//dashboardCreation-20160204_020110PM.png
+2016-02-04/14:01:25:973 -- INFO       DashboardTest - Running dashboardHealthCheck testcase
+2016-02-04/14:01:26:121 -- INFO       DashboardTest - Using prd_selpro@dispostable.com to login to Spaces
+2016-02-04/14:01:41:842 -- INFO       FullScreenCapture - Png Path:/Users/neeraj.kadoo/automation/automation/automation//Screenshots//Failures//dashboardHealthCheck-20160204_020141PM.png

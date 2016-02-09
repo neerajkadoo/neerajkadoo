@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Test Cases" duration-ms="33618" started-at="2015-11-12T00:50:59Z" finished-at="2015-11-12T00:51:33Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="5" started-at="2015-11-12T00:50:59Z" finished-at="2015-11-12T00:50:59Z">
+    </test> <!-- Test -->
+    <test name="Firefox Test" duration-ms="33545" started-at="2015-11-12T00:50:59Z" finished-at="2015-11-12T00:51:33Z">
+      <class name="com.mvn.automation.HomePageLinksTest">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.mvn.automation.HomePageLinksTest@64eee839]" name="setUp" is-config="true" duration-ms="17489" started-at="2015-11-11T16:50:59Z" finished-at="2015-11-11T16:51:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[stage]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="findHomePageLinks()[pri:0, instance:com.mvn.automation.HomePageLinksTest@64eee839]" name="findHomePageLinks" duration-ms="16044" started-at="2015-11-11T16:51:17Z" finished-at="2015-11-11T16:51:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findHomePageLinks -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mvn.automation.HomePageLinksTest@64eee839]" name="tearDown" is-config="true" duration-ms="4" started-at="2015-11-11T16:51:33Z" finished-at="2015-11-11T16:51:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.mvn.automation.HomePageLinksTest -->
+    </test> <!-- Firefox Test -->
+  </suite> <!-- Test Cases -->
+</testng-results>

@@ -1,0 +1,132 @@
+THIS IS TEMPLATE FOR TESTCASES. 
+PLEASE FOLLOW THIS AS PER COMMENTS PROVIDED WITH PREFIX //. COMMENTS CAN BE DELETED OR UPDATED AFTER WRTING TESTCASES.
+TESTCASES SHOULD BE WRITTEN UNDER "SRC/TEST/JAVA/COM/MVN/AUTOMATION"
+TESTCASE NAME SHOULD BE MEANINGFUL NAME STARTING WITH UPPERCASE ALPHABET AND SUFFIX AS Test.java. e.g <AdminMemberTest.java>.
+ 
+//MANDATORY PACKAGE DECLARATION//
+package com.mvn.automation;
+
+//MANDATORY IMPORTS//
+ 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+//IMPORT AS NEEDED FOR YOUR TESTCASE//
+
+import pageClasses.CreateSpacePageFactory;
+import pageClasses.SigninPageFactory;
+import pageClasses.myAccountPageFactory;
+import pageClasses.ShareSpacesFactory;
+import utilities.Constants;
+import utilities.ExcelUtility;
+
+
+public class <CLASS NAME AS TESTCASE NAME> {
+	private WebDriver driver;
+
+//INCLUDE PAGEFACTORY AS NEEDED BY YOUR TESTCASE//
+	SigninPageFactory signIn;
+	myAccountPageFactory myAccount;
+	CreateSpacePageFactory spaceCreate;
+	ShareSpacesFactory shareSpace;
+
+//LOGGER DECLARATION//
+	static Logger log = Logger.getLogger(SignInTest.class);
+
+// USE THIS CLASS FOR MOUSE-OVER ACTIONS IF NEEDED
+	Actions action;
+
+//MANDATORY//
+	@Parameters({"browserType", "env"})
+
+//MANDATORY SETUP//
+	@BeforeMethod
+	public void setUp(String browser, String envir) throws Exception {
+		if (browser.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		} else if (browser.equalsIgnoreCase("chrome")) {
+			// http://chromedriver.storage.googleapis.com/index.html
+			System.setProperty("webdriver.chrome.driver", Constants.Chrome_driver_location);
+			driver = new ChromeDriver();
+		}
+		if (envir.equalsIgnoreCase("stage")){
+			driver.get(Constants.URL);
+		}else if (envir.equalsIgnoreCase("prod")){
+			driver.get(Constants.PROD_URL);
+		}
+
+// INITIALIZE DRIVER AS NEEDED//
+		myAccount = new myAccountPageFactory(driver);
+		signIn = new SigninPageFactory(driver);
+		spaceCreate = new CreateSpacePageFactory(driver);
+		shareSpace = new ShareSpacesFactory(driver);
+
+// MANDATORY- MAXIMIZE THE BROWSER'S WINDOW
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		PropertyConfigurator.configure("log4j.properties");
+		driver.get(Constants.URL);
+	}
+
+//@TEST(GROUPS = "POSITIVE") IF YOU TEST-CASE IS POSITIVE
+// @TEST(GROUPS = "NEGATIVE")" IF YOUR TEST-CASE IS NEGATIVE
+// @TEST(GROUPS = { "POSITIVE", "SMOKE" }) IF TEST CASE IS POSITIVE AND INCLUDED IN SMOKE
+ 
+	@Test(groups = "positive")
+
+	public void <testcase name1>() throws Exception {
+		log.info("<testcase description>");
+
+// IF TESTDATA IS NEEDED FROM EXCEL FILE AVAILABLE UNDER UTILITY
+		ExcelUtility.setExcelFile(Constants.FILE_PATH + Constants.FILE_NAME, "Sheet1");
+
+//EXAMPLE ON HOW TO PULL DATA FROM EXCEL SHEET
+		String userEmail = ExcelUtility.getCellData(5, 1);
+		String userPassword = ExcelUtility.getCellData(5, 2);
+		String recptxlsEmail = ExcelUtility.getCellData(6, 1);
+		String shareMsg = ExcelUtility.getCellData(6, 2);
+
+//WRITE YOUR TESTSTEPS HERE
+		-----
+		-----
+		-----
+	}
+
+//ANOTHER TESTCASE
+	@Test(groups = "negative")
+
+	public void <testcase name2>() throws Exception {
+		log.info("<testcase description>");
+
+	//WRITE YOUR TESTSTEPS HERE
+		-----
+		-----
+		-----
+	}
+}
+
+//MANDATORY AFTER METHOD. THIS IS NEEDED TO GENERATE REPORTS AND END TESTCASE
+
+	@AfterMethod
+	public void afterClass(ITestResult testResult) throws IOException {
+		utilities.FullScreenCapture.takeScreenShotOnFailure(testResult, driver);
+		driver.close();
+	}
+}
